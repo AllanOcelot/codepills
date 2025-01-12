@@ -3,25 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BrandPills</title>
+  <title>Codepills | Easy to display code pills by AllanCodes</title>
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+
+  <!-- Google fonts Roboto just for the example page -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      background: #8cb3c5;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      font-family: "Roboto", serif;
+    }
+
+    h1,h2,h3,h4,h5,p {
+      font-family: "Roboto", serif;
+    }
+
+    h1,h2,h3,h4,h5 {
+      margin-bottom: 0;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    .page-wrap {
+      display: flex;
+      flex-direction: column;
+      margin: auto;
+      background: #f1f1f1;
+      box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 20px 20px 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+  </style>
 </head>
   <body>
-    <h1>Brandpills is a super simple way of displaying web dev related tech in pill form.</h1>
-    <p>This is just a super simple way to import and display off brand/tech in the web dev world. It's aimed at people making their portfolio / hobby project that just want to easily import them.</p>
+    <div class="page-wrap">
+      <section clas="intro">
+        <h1>CodePills:</h1>
+        <p>A super simple way of displaying web dev related tech in pill form.</p>
+        <p>I made this for a project I'm working on, and thought it might be useful to others. Please feel free to contribute or raise any issues.</p>
+      </section>
+  
+      <section>
+        <h2>Default:</h2>
+        <p>Default example, calling the items</p>
+        <div id="example1"></div>
+      </section>
+  
+      <section>
+        <h2>Rounded:</h2>
+        <p>Example, Rounded items</p>
+        <div id="example2"></div>
+      </section>
+    </div>
 
-
-    <section>
-      <h2>Default:</h2>
-      <p>Default example, calling the items</p>
-      <div id="example1"></div>
-    </section>
-
-    <section>
-      <h2>Rounded:</h2>
-      <p>Example, Rounded items</p>
-      <div id="example2"></div>
-    </section>
   </body>
 
   <script type="module">
