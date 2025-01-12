@@ -11,6 +11,21 @@ export function getBrands(){
   return listContainer
 }
 
+
+// If the user has provided a list of brands, let's sanitise them to be sure we get a match where possible.
+function cleanBrandInput(inputArray: string[]){
+  if(inputArray){
+    let newArray: string[] = []
+    inputArray.forEach( (item, index) => {
+      let inputString = item.trim().toLowerCase()
+          newArray.push(inputString)
+    })
+    console.log(newArray)
+    return newArray
+  }
+  return null
+}
+
 function createPillItem(
   item: { brandName: string; mdiIcon: string | null; humanReadable: string },
   options: { 
@@ -84,8 +99,13 @@ export function createPills(
   const brandsMap = new Map()
   brands.forEach((brand) => brandsMap.set(brand.brandName, brand))
   // the results of our search on user provided input
+
+
+
+
+
   const matchingBrands = brandListInput
-  ? brandListInput.map((name) => brandsMap.get(name))
+  ? cleanBrandInput(brandListInput).map((name) => brandsMap.get(name))
   : brands;
 
 
