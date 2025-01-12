@@ -1,8 +1,12 @@
-# CodePills
-I needed some brand pills for a project, so quickly made this.
-It's super simple, I'll update this ReadMe with an example / implementation later.
+<div align="center">
+  <img src="gitimage.png" alt="CodePills look good enough to eat" width="800">
+</div>
 
-# Stuff to do 
-- Add more customisation ( ability to toggle icons, a dark mode / light mode styling )
-- For pill's without an appropriate icon, I'll attempt to use a "generic one" - i.e cloud hosting's should use a cloud etc
-- publish it on NPM and try using it on a project.
+# WIP : CodePills
+Codepills is an easy way to create pills about the tech you use and love. 
+You can view examples and learn how to use Codepills on the [Github Page](https://allanocelot.github.io/codepills/).
+
+
+# Remaining items to do before v.1 is done
+ - publish to npm
+ - improve documentation / use guide
