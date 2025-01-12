@@ -18,9 +18,12 @@ function cleanBrandInput(inputArray: string[]){
     let newArray: string[] = []
     inputArray.forEach( (item, index) => {
       let inputString = item.trim().toLowerCase()
-          newArray.push(inputString)
+        // Remove periods, user may type 'vue.js' for example
+        if(inputString.includes('.')){
+          inputString = inputString.replace(/\./g, '')
+        }
+        newArray.push(inputString)
     })
-    console.log(newArray)
     return newArray
   }
   return null
