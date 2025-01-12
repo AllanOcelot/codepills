@@ -39,6 +39,8 @@
 
     p {
       margin-bottom: 10px;
+      font-size: 1em;
+      line-height: 1.4em;
     }
 
     .page-wrap {
@@ -56,33 +58,142 @@
       flex-direction: column;
       padding: 10px 20px 20px 20px;
       border-bottom: 1px solid rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
+    section.intro {
+      margin-bottom: 0px;
+    }
+    
+    section p.note {
+      display: flex;
+      background: #d35333;
+      font-weight: normal;
+      border-top: 4px solid #ee6a49;
+      color: #fff;
+      padding: 10px 10px;
+    }
+
+    section .divider {
+      margin: 20px 0 20px 0;
+      opacity: .3;
+    }
+
+    .configTable {
+
+    }
+    .configTable thead th {
+      background: #1f6fb1;
+      padding: 20px;
+      border: none;
+      color: #fff;
+      text-align: left;
+    }
+    .configTable tbody tr {
+      background: #e6e6e6;
+    }
+    .configTable tbody tr:nth-child(odd) {
+      background: #f0f0f0;
+    }
+    .configTable tbody td {
+      padding: 10px 20px;
+      text-align: left;
+      border-bottom: 1px solid rgb(0,0,0,0.1);
     }
   </style>
 </head>
   <body>
     <div class="page-wrap">
-      <section clas="intro" aria-labelledby="pageTitle">
+      <section class="intro" aria-labelledby="pageTitle">
         <h1 id="pageTitle">CodePills:</h1>
         <p>A super simple way of displaying web dev related tech in pill form. <br> I made this for a project I'm working on, and thought it might be useful to others. Please feel free to contribute or raise any issues.</p>
       </section>
 
       <section arira-labelledby="exampleDefaultTitle">
         <h2 id="exampleDefaultTitle">Default:</h2>
-        <p>With no argument, Codepills will output all available pills with no styling attached.</p>
+        <p>With no arguments, Codepills will output all available pills with no styling attached.</p>
         <p><b>Example:</b></p>
-        <pre aria-label="Code example: An example of calling CreatePills function"><code class="lang-js">createPills(exampleBrands)</code></pre>
+        <pre aria-label="Code example: An example of calling CreatePills function"><code class="lang-js">createPills()</code></pre>
           <p><b>Generates:</b></p>
         <div id="example1"></div>
       </section>
+
+
+      <section aria-labelledby="optionsTitle">
+        <h2 id="optionsTitle">Options and Config</h2>
+        <p>Configuring pills is simple, the createPills function takes two arguments. An array and an Object. Both are optional.</p>
+        <pre aria-label="basic usage example of pills"><code class="lang-js">createPills(ArrayOfBrands, OptionsObject)</code></pre>
+        <h3>ArrayOfBrands</h3>
+        <p>
+          The first argument for createPills is an array of strings. The strings should each be a brand name. For example "html5" or "css". <br>
+        </p>
+        <pre><code class="lang-js">const arrayofBrands = ['vuejs','digitalocean','vite','gatsby','tailwindcss','netlify','php']</code></pre>
+        <p class="note">If an empty array is passed, createPills will return the full list of pills. This may be useful for debugging.</p>        
+        <hr class="divider">
+        <h3>OptionsObject</h3>
+        <p>The second argument, is an Object with the following <b>OPTIONAL</b> attributes</p>
+        <table class="configTable" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Property</td>
+              <th>Type</td>
+              <th>Description</td>
+              <th>Default</th>
+              <th>Supported Values</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#exampleRoundedTitle" title="jump to rounded">Rounded</a></td>
+              <td>Boolean</td>
+              <td>Apply rounded corners to the pills</td>
+              <td>false</td>
+              <td>true,false</td>
+            </tr>
+            <tr>
+              <td><a href="#exampleSpacingTitle" title="jump to spacing">Spacing</a></td>
+              <td>String</td>
+              <td>Set the margin around each item</td>
+              <td>small</td>
+              <td>"small", "medium", "large"</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
   
-      <section>
-        <h2>Specific list:</h2>
-        <p>Passing in an array of strings to codepills will generate pills based on that array.</p>
+      <section arira-labelledby="exampleSpecificTitle">
+        <h2 id="exampleSpecificTitle">Specific list:</h2>
+        <p>Passing in an array of strings to Codepills will generate pills based on that array.</p>
         <p><b>Example:</b></p>
         <pre><code class="lang-js">const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
 createPills(exampleBrands)</code></pre>
           <p><b>Generates:</b></p>
         <div id="example2"></div>
+      </section>
+
+      <section arira-labelledby="exampleRoundedTitle">
+        <h2 id="exampleRoundedTitle">Rounded list:</h2>
+        <p>You may enable, rounding, by passing the second argument as true. Default is false.</p>
+        <p><b>Example:</b></p>
+        <pre><code class="lang-js">const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
+createPills(exampleBrands, true)</code></pre>
+          <p><b>Generates:</b></p>
+        <div id="example3"></div>
+      </section>
+
+      <section arira-labelledby="exampleSpacingTitle">
+        <h2 id="exampleSpacingTitle">Spacing Example:</h2>
+        <p>You may change spacing, by passing in the third argument. <br> Spacing may be:</p>
+        <ul>
+          <li>'Small'</li>
+          <li>'Medium'</li>
+          <li>'Large'</li>
+        </ul>
+        <p><b>Example:</b></p>
+        <pre><code class="lang-js">const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
+createPills(exampleBrands, true, 'large')</code></pre>
+          <p><b>Generates:</b></p>
+        <div id="example4"></div>
       </section>
     </div>
 
@@ -97,8 +208,14 @@ createPills(exampleBrands)</code></pre>
     // providing a function to quickly allow people to populate elements via js rather than manually typing out our classes
     document.getElementById('example1').append(createPills())
 
-    // rounded corner
+    // specific list
     document.getElementById('example2').append(createPills(exampleBrands))
+
+    // rounded pills
+    document.getElementById('example3').append(createPills(exampleBrands, { rounded: true }))
+
+    // spacing example
+    document.getElementById('example4').append(createPills(exampleBrands, { spacing: 'large' }))
 
   </script>
 </html>
