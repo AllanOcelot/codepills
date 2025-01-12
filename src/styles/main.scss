@@ -12,25 +12,27 @@
     margin: 0 5px 5px 5px;
     border-radius: 12px;
     cursor: default;
-    opacity: .9;
-    color: #000;
+    opacity: .85;
+    color: #fff;
     font-family: Arial, Helvetica, sans-serif;
     align-items: center;
     letter-spacing: 1px;
     justify-content: flex-start;
+    font-size: .9em;
     height: 36px;
+    font-weight: 600;
   
     i {
       display: inline-block;
       font-size: 1.4em;
       font-weight: normal;
-      color: #000;
-      margin-right: 6px;
+    //  color: #000;
+      margin-right: 8px;
     }
   
     &.brandpill-dark,
     &.brandpill-dark i {
-      color: #e7e7e7fa;
+    //  color: #e7e7e7fa;
     }
   
     &:hover {
@@ -39,11 +41,9 @@
   
     &.html5 {
       background-color: #E34F26;
-      color: #FFFFFF;
     }
     &.css3 {
       background-color: #1572B6;
-      color: #FFFFFF;
     }
     &.javascript {
       background-color: #F7DF1E;
@@ -51,7 +51,6 @@
     }
     &.typescript {
       background-color: #3178C6;
-      color: #FFFFFF;
     }
     &.react {
       background-color: #61DAFB;
@@ -63,23 +62,18 @@
     }
     &.angular {
       background-color: #DD0031;
-      color: #FFFFFF;
     }
     &.svelte {
       background-color: #FF3E00;
-      color: #FFFFFF;
     }
     &.nodejs {
       background-color: #339933;
-      color: #FFFFFF;
     }
     &.expressjs {
       background-color: #000000;
-      color: #FFFFFF;
     }
     &.php {
       background-color: #777BB4;
-      color: #FFFFFF;
     }
     &.python {
       background-color: #3776AB;
@@ -87,27 +81,21 @@
     }
     &.django {
       background-color: #092E20;
-      color: #FFFFFF;
     }
     &.rubyonrails {
       background-color: #CC0000;
-      color: #FFFFFF;
     }
     &.aspnet {
       background-color: #512BD4;
-      color: #FFFFFF;
     }
     &.bootstrap {
       background-color: #7952B3;
-      color: #FFFFFF;
     }
     &.tailwindcss {
       background-color: #06B6D4;
-      color: #FFFFFF;
     }
     &.jquery {
       background-color: #0769AD;
-      color: #FFFFFF;
     }
     &.webpack {
       background-color: #8DD6F9;
@@ -115,15 +103,12 @@
     }
     &.vite {
       background-color: #646CFF;
-      color: #FFFFFF;
     }
     &.gatsby {
       background-color: #663399;
-      color: #FFFFFF;
     }
     &.nextjs {
       background-color: #000000;
-      color: #FFFFFF;
     }
     &.nuxtjs {
       background-color: #00DC82;
@@ -131,19 +116,15 @@
     }
     &.mongodb {
       background-color: #47A248;
-      color: #FFFFFF;
     }
     &.mysql {
       background-color: #4479A1;
-      color: #FFFFFF;
     }
     &.postgresql {
       background-color: #336791;
-      color: #FFFFFF;
     }
     &.sqlite {
       background-color: #003B57;
-      color: #FFFFFF;
     }
     &.firebase {
       background-color: #FFCA28;
@@ -155,79 +136,60 @@
     }
     &.azure {
       background-color: #0078D4;
-      color: #FFFFFF;
     }
     &.googlecloud {
       background-color: #4285F4;
-      color: #FFFFFF;
     }
     &.docker {
       background-color: #2496ED;
-      color: #FFFFFF;
     }
     &.kubernetes {
       background-color: #326CE5;
-      color: #FFFFFF;
     }
     &.graphql {
       background-color: #E10098;
-      color: #FFFFFF;
     }
     &.prisma {
       background-color: #2D3748;
-      color: #FFFFFF;
     }
     &.redis {
       background-color: #DC382D;
-      color: #FFFFFF;
     }
     &.elasticsearch {
       background-color: #005571;
-      color: #FFFFFF;
     }
     &.kibana {
       background-color: #005571;
-      color: #FFFFFF;
     }
     &.jenkins {
       background-color: #D24939;
-      color: #FFFFFF;
     }
     &.travisci {
       background-color: #3EAAAF;
-      color: #FFFFFF;
     }
     &.circleci {
       background-color: #343434;
-      color: #FFFFFF;
     }
     &.terraform {
       background-color: #623CE4;
-      color: #FFFFFF;
     }
     &.ansible {
       background-color: #EE0000;
-      color: #FFFFFF;
     }
     &.prometheus {
       background-color: #E6522C;
-      color: #FFFFFF;
     }
     &.grafana {
       background-color: #F46800;
-      color: #FFFFFF;
     }
     &.postman {
       background-color: #FF6C37;
-      color: #FFFFFF;
     }
     &.heroku {
       background-color: #430098;
-      color: #FFFFFF;
     }
     &.vercel {
       background-color: #000000;
-      color: #FFFFFF;
     }
     &.netlify {
       background-color: #00C7B7;
@@ -239,31 +201,24 @@
     }
     &.digitalocean {
       background-color: #0080FF;
-      color: #FFFFFF;
     }
     &.git {
       background-color: #F05032;
-      color: #FFFFFF;
     }
     &.github {
       background-color: #181717;
-      color: #FFFFFF;
     }
     &.gitlab {
       background-color: #FC6D26;
-      color: #FFFFFF;
     }
     &.bitbucket {
       background-color: #0052CC;
-      color: #FFFFFF;
     }
     &.npm {
       background-color: #CB3837;
-      color: #FFFFFF;
     }
     &.yarn {
       background-color: #2C8EBB;
-      color: #FFFFFF;
     }
     &.parcel {
       background-color: #F7B93E;
@@ -275,7 +230,6 @@
     }
     &.eslint {
       background-color: #4B32C3;
-      color: #FFFFFF;
     }
     &.prettier {
       background-color: #F7B93E;
@@ -283,55 +237,42 @@
     }
     &.jest {
       background-color: #C21325;
-      color: #FFFFFF;
     }
     &.mocha {
       background-color: #8D6748;
-      color: #FFFFFF;
     }
     &.chai {
       background-color: #A30701;
-      color: #FFFFFF;
     }
     &.cypress {
       background-color: #17202C;
-      color: #FFFFFF;
     }
     &.storybook {
       background-color: #FF4785;
-      color: #FFFFFF;
     }
     &.figma {
       background-color: #F24E1E;
-      color: #FFFFFF;
     }
     &.invision {
       background-color: #FF3366;
-      color: #FFFFFF;
     }
     &.adobexd {
       background-color: #FF61F6;
-      color: #FFFFFF;
     }
     &.sketch {
       background-color: #F7B500;
-      color: #000000;
     }
     &.fontawesome {
       background-color: #339AF0;
-      color: #FFFFFF;
     }
     &.materialui {
       background-color: #007FFF;
-      color: #FFFFFF;
     }
     &.antdesign {
       background-color: #0170FE;
-      color: #FFFFFF;
     }
     &.tailwindui {
       background-color: #06B6D4;
-      color: #FFFFFF;
     }
     &.bulma {
       background-color: #00D1B2;
@@ -339,27 +280,21 @@
     }
     &.foundation {
       background-color: #2083C5;
-      color: #FFFFFF;
     }
     &.hugo {
       background-color: #FF4088;
-      color: #FFFFFF;
     }
     &.jekyll {
       background-color: #CC0000;
-      color: #FFFFFF;
     }
     &.strapi {
       background-color: #2E7EEA;
-      color: #FFFFFF;
     }
     &.contentful {
       background-color: #2478CC;
-      color: #FFFFFF;
     }
     &.sanityio {
       background-color: #F03E2F;
-      color: #FFFFFF;
     }
   }
 
