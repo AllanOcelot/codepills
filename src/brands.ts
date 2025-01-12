@@ -47,7 +47,7 @@ export const brands = [
   { brandName: 'postman', mdiIcon: 'mdi-postman', isDark: false, humanReadable: 'Postman' },
   { brandName: 'heroku', mdiIcon: 'mdi-heroku', isDark: true, humanReadable: 'Heroku' },
   { brandName: 'vercel', mdiIcon: 'mdi-cloud', isDark: true, humanReadable: 'Vercel' },
-  { brandName: 'netlify', mdiIcon: 'mdi-netlify', isDark: false, humanReadable: 'Netlify' },
+  { brandName: 'netlify', mdiIcon: '', isDark: false, humanReadable: 'Netlify' },
   { brandName: 'render', mdiIcon: 'mdi-cloud', isDark: false, humanReadable: 'Render' },
   { brandName: 'digitalocean', mdiIcon: 'mdi-digital-ocean', isDark: true, humanReadable: 'DigitalOcean' }
 ];
