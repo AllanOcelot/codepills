@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./gitimage.png" alt="CodePills look good enough to eat" width="800">
+  <img src="gitimage.png" alt="CodePills look good enough to eat" width="800">
 </div>
 
 # WIP : CodePills
