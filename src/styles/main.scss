@@ -9,8 +9,7 @@
     display: inline-flex;
     box-sizing: border-box;
     padding: 0 10px 0 15px;
-    margin: 0 5px 5px 5px;
-    border-radius: 12px;
+    margin: 0 8px 8px 8px;
     cursor: default;
     opacity: .85;
     color: #fff;
@@ -21,6 +20,22 @@
     font-size: .9em;
     height: 36px;
     font-weight: 600;
+
+    // Add option for rounding
+    &.rounded {
+      border-radius: 18px;
+    }
+
+    // Give spacing options
+    &.spaced-small {
+      margin: 0 3px 3px 3px;
+    }
+    &.spaced-med {
+      margin: 0 5px 5px 5px;
+    }
+    &.spaced-large {
+      margin: 0 8px 8px 8px;
+    }
 
     &.icon {
       padding-left: 15px;
