@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "esnext",                
+    "module": "esnext",                
+    "moduleResolution": "node",        
+    "strict": true,                    
+    "jsx": "preserve",                 
+    "esModuleInterop": true,           
+    "skipLibCheck": true,              
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",                // Output compiled JS to the 'dist' folder
+    "rootDir": "./src"                 // Set 'src' as the root directory
+  },
+  "include": ["src"],                  // Include all files in 'src'
+  "exclude": ["node_modules"]          // Exclude 'node_modules'
+}
