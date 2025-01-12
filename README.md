@@ -1,6 +1,7 @@
 <div align="center">
-  <img src="gitImage.png" alt="CodePills look good enough to eat" width="800">
+  <img src="gitImage.png" alt="CodePills look good enough to eat" style="width: 80%;">
 </div>
+&nbsp;
 
 # WIP : CodePills
 Codepills is an easy way to create pills about the tech you use and love. 
