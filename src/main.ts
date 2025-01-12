@@ -13,6 +13,16 @@ function createPillItem(item: {brandName: string, mdiIcon: string | null, humanR
     iconElement.classList.add('mdi', item.mdiIcon)
     element.prepend(iconElement)
   }
+
+  if(rounded){
+    element.classList.add('rounded')
+  }
+
+
+  if(spacing === 'small' || spacing === 'medium' || spacing === 'large'){
+      element.classList.add('spaced-' + spacing)
+  }
+
   element.append(item.humanReadable)
   return element
 }
@@ -31,11 +41,9 @@ export function createPills(brandListInput: [string], rounded: Boolean | null = 
 
   if(brandListInput){
     const matchingBrands = brandListInput.map(name => brandsMap.get(name));
-    console.log(matchingBrands)
     matchingBrands.forEach( item => {
       const pill = createPillItem(item, rounded, spacing)
       pills.push(pill)
-      console.log(pills)
     })
   }else{
     brands.forEach( item => {
