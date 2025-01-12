@@ -235,7 +235,9 @@ createPills(exampleBrands)</code></pre>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script type="module">
-    import { createPills } from '/src/main.ts'
+    import { getBrands, createPills } from '/src/main.ts'
+
+    //console.log(getBrands())
 
     const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
 
@@ -246,10 +248,10 @@ createPills(exampleBrands)</code></pre>
     document.getElementById('example2').append(createPills(exampleBrands))
 
     // rounded pills
-    document.getElementById('example3').append(createPills([],{ rounded: true }))
+    document.getElementById('example3').append(createPills(exampleBrands,{ rounded: true }))
 
     // spacing example
-    document.getElementById('example4').append(createPills([], { spacing: 'large' }))
+    document.getElementById('example4').append(createPills(exampleBrands, { spacing: 'large' }))
 
     // Alignment 
     const exampleAlign = ['html','css3','python','aspnet']

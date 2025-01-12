@@ -1,9 +1,24 @@
 import { brands } from './brands'
 import './styles/main.scss'
 
+export function getBrands(){
+  const listContainer = document.createElement('ul')
+
+  brands.forEach(element => {
+    let itemNode = document.createElement('li')
+    itemNode.innerHTML = element.humanReadable
+    listContainer.append(itemNode)
+  });
+  return listContainer
+}
+
 function createPillItem(
   item: { brandName: string; mdiIcon: string | null; humanReadable: string },
-  options: { rounded?: boolean; spacing?: 'small' | 'medium' | 'large' } = {}
+  options: { 
+    rounded?: boolean; 
+    spacing?: 'small' | 'medium' | 'large'
+    iconsEnabled?: boolean;
+  } = {}
 ) {
   const { rounded = false, spacing = 'small' } = options
 
@@ -12,7 +27,7 @@ function createPillItem(
   element.className = `brandpill ${item.brandName}`
 
   // If there's an icon
-  if (item.mdiIcon) {
+  if (item.mdiIcon && item.mdiIcon.trim() !== '') {
     element.classList.add('icon')
     iconElement = document.createElement('i');
     iconElement.classList.add('mdi', item.mdiIcon)
