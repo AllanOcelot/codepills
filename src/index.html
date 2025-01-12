@@ -8,6 +8,11 @@
 
   <!-- Google fonts Roboto just for the example page -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- use prism for showing code snippets , love you prism -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" />
+
   <style>
     body, html {
       background: #8cb3c5;
@@ -42,6 +47,8 @@
       margin: auto;
       background: #f1f1f1;
       box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 1024px;
     }
 
     section {
@@ -50,42 +57,48 @@
       padding: 10px 20px 20px 20px;
       border-bottom: 1px solid rgba(0,0,0,0.1);
     }
-
   </style>
 </head>
   <body>
     <div class="page-wrap">
-      <section clas="intro">
-        <h1>CodePills:</h1>
-        <p>A super simple way of displaying web dev related tech in pill form.</p>
-        <p>I made this for a project I'm working on, and thought it might be useful to others. Please feel free to contribute or raise any issues.</p>
+      <section clas="intro" aria-labelledby="pageTitle">
+        <h1 id="pageTitle">CodePills:</h1>
+        <p>A super simple way of displaying web dev related tech in pill form. <br> I made this for a project I'm working on, and thought it might be useful to others. Please feel free to contribute or raise any issues.</p>
       </section>
-  
-      <section>
-        <h2>Default:</h2>
-        <p>Default example, calling the items</p>
+
+      <section arira-labelledby="exampleDefaultTitle">
+        <h2 id="exampleDefaultTitle">Default:</h2>
+        <p>With no argument, Codepills will output all available pills with no styling attached.</p>
+        <p><b>Example:</b></p>
+        <pre aria-label="Code example: An example of calling CreatePills function"><code class="lang-js">createPills(exampleBrands)</code></pre>
+          <p><b>Generates:</b></p>
         <div id="example1"></div>
       </section>
   
       <section>
-        <h2>Rounded:</h2>
-        <p>Example, Rounded items</p>
+        <h2>Specific list:</h2>
+        <p>Passing in an array of strings to codepills will generate pills based on that array.</p>
+        <p><b>Example:</b></p>
+        <pre><code class="lang-js">const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
+createPills(exampleBrands)</code></pre>
+          <p><b>Generates:</b></p>
         <div id="example2"></div>
       </section>
     </div>
 
   </body>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script type="module">
     import { createPills } from './main.ts'
 
     const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
 
     // providing a function to quickly allow people to populate elements via js rather than manually typing out our classes
-    document.getElementById('example1').append(createPills(exampleBrands))
+    document.getElementById('example1').append(createPills())
 
     // rounded corner
-    document.getElementById('example2').append(createPills(exampleBrands, true, 'large'))
+    document.getElementById('example2').append(createPills(exampleBrands))
 
   </script>
 </html>
