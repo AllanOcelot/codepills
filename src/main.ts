@@ -1,11 +1,7 @@
 import { brands } from './brands'
 import './styles/main.scss'
 
-
-
-const container = document.createElement('div'); 
-container.classList.add('brandpill-container'); 
-brands.forEach(item => {
+function createPillItem(item: {brandName: string, mdiIcon: string | null, humanReadable: string}, rounded: Boolean | null = false, spacing: string | null = 'small'){
   const element = document.createElement('div')
   let iconElement;
   element.className = `brandpill ${item.brandName}`
@@ -17,16 +13,39 @@ brands.forEach(item => {
     iconElement.classList.add('mdi', item.mdiIcon)
     element.prepend(iconElement)
   }
+  element.append(item.humanReadable)
+  return element
+}
 
-  if(item.isDark === true ){
-    element.className += ' brandpill-dark'
+export function createPills(brandListInput: [string], rounded: Boolean | null = false, spacing: string | null = 'small'){
+  // Use a map for quicker lookup.
+  const brandsMap = new Map()
+  brands.forEach(brand => brandsMap.set(brand.brandName, brand));
+
+
+  // Container for our pills
+  const container = document.createElement('div'); 
+  container.classList.add('brandpill-container'); 
+
+  const pills: Array<Node> = []
+
+  if(brandListInput){
+    const matchingBrands = brandListInput.map(name => brandsMap.get(name));
+    console.log(matchingBrands)
+    matchingBrands.forEach( item => {
+      const pill = createPillItem(item, rounded, spacing)
+      pills.push(pill)
+      console.log(pills)
+    })
+  }else{
+    brands.forEach( item => {
+      pills.push(createPillItem(item))
+    })
   }
 
+  pills.forEach( pill => {
+    container.appendChild(pill)
+  })
 
-
-  element.append(item.humanReadable)
-
-  container.appendChild(element)
-});
-
-document.body.appendChild(container)
+  return container
+}

@@ -7,11 +7,33 @@
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
 </head>
   <body>
-    <h2>Brandpills is a super simple way of displaying web dev related tech in pill form.</h2>
-    <div class="brandPill">
-      Example
-    </div>
-    <div class="brandPill"></div>
+    <h1>Brandpills is a super simple way of displaying web dev related tech in pill form.</h1>
+    <p>This is just a super simple way to import and display off brand/tech in the web dev world. It's aimed at people making their portfolio / hobby project that just want to easily import them.</p>
+
+
+    <section>
+      <h2>Default:</h2>
+      <p>Default example, calling the items</p>
+      <div id="example1"></div>
+    </section>
+
+    <section>
+      <h2>Rounded:</h2>
+      <p>Example, Rounded items</p>
+      <div id="example2"></div>
+    </section>
   </body>
-  <script type="module" src="./main.ts"></script>
+
+  <script type="module">
+    import { createPills } from './main.ts'
+
+    const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
+
+    // providing a function to quickly allow people to populate elements via js rather than manually typing out our classes
+    document.getElementById('example1').append(createPills(exampleBrands))
+
+    // rounded corner
+    //document.getElementById('example2').append(createPills())
+
+  </script>
 </html>
