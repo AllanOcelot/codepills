@@ -1,4 +1,4 @@
-# Brand Pills
+# CodePills
 I needed some brand pills for a project, so quickly made this.
 It's super simple, I'll update this ReadMe with an example / implementation later.
 
