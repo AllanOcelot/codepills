@@ -66,11 +66,18 @@
     
     section p.note {
       display: flex;
-      background: #d35333;
+      background: #3358d3;
       font-weight: normal;
-      border-top: 4px solid #ee6a49;
+      border-top: 4px solid #4f77f8;
       color: #fff;
       padding: 10px 10px;
+      align-items: center;
+    }
+
+    section p.note i {
+      font-size: 1.6em;
+      margin-right: 12px;
+      opacity: .9;
     }
 
     section .divider {
@@ -123,11 +130,11 @@
         <p>Configuring pills is simple, the createPills function takes two arguments. An array and an Object. Both are optional.</p>
         <pre aria-label="basic usage example of pills"><code class="lang-js">createPills(ArrayOfBrands, OptionsObject)</code></pre>
         <h3>ArrayOfBrands</h3>
-        <p>
-          The first argument for createPills is an array of strings. The strings should each be a brand name. For example "html5" or "css". <br>
-        </p>
+        <p>The first argument for createPills is an array of strings. The strings should each be a brand name. For example "html5" or "css". <br></p>
         <pre><code class="lang-js">const arrayofBrands = ['vuejs','digitalocean','vite','gatsby','tailwindcss','netlify','php']</code></pre>
-        <p class="note">If an empty array is passed, createPills will return the full list of pills. This may be useful for debugging.</p>        
+        <p class="note">
+          <i class="mdi mdi-information"></i>
+          If an empty array is passed as the first argument, createPills will return the full list of Pills. Useful for debugging.</p> 
         <hr class="divider">
         <h3>OptionsObject</h3>
         <p>The second argument, is an Object with the following <b>OPTIONAL</b> attributes</p>
@@ -183,12 +190,7 @@ createPills(exampleBrands, true)</code></pre>
 
       <section arira-labelledby="exampleSpacingTitle">
         <h2 id="exampleSpacingTitle">Spacing Example:</h2>
-        <p>You may change spacing, by passing in the third argument. <br> Spacing may be:</p>
-        <ul>
-          <li>'Small'</li>
-          <li>'Medium'</li>
-          <li>'Large'</li>
-        </ul>
+        <p>Spacing changes the spacing between each item. It may be 'small', 'medium', or 'large'</p>
         <p><b>Example:</b></p>
         <pre><code class="lang-js">const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
 createPills(exampleBrands, true, 'large')</code></pre>
@@ -212,7 +214,7 @@ createPills(exampleBrands, true, 'large')</code></pre>
     document.getElementById('example2').append(createPills(exampleBrands))
 
     // rounded pills
-    document.getElementById('example3').append(createPills(exampleBrands, { rounded: true }))
+    document.getElementById('example3').append(createPills([],{ rounded: true }))
 
     // spacing example
     document.getElementById('example4').append(createPills(exampleBrands, { spacing: 'large' }))
