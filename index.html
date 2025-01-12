@@ -56,12 +56,14 @@
     section {
       display: flex;
       flex-direction: column;
-      padding: 10px 20px 20px 20px;
+      padding: 10px 40px 40px 40px;
       border-bottom: 1px solid rgba(0,0,0,0.1);
       margin-bottom: 30px;
     }
     section.intro {
-      margin-bottom: 0px;
+      padding: 80px 40px;
+      margin-bottom: 5vh;
+      background:#fff;
     }
     
     section p.note {
@@ -112,7 +114,8 @@
     <div class="page-wrap">
       <section class="intro" aria-labelledby="pageTitle">
         <h1 id="pageTitle">CodePills:</h1>
-        <p>A super simple way of displaying web dev related tech in pill form. <br> I made this for a project I'm working on, and thought it might be useful to others. Please feel free to contribute or raise any issues.</p>
+        <p>A super simple way of displaying tech 'brands' in pill form. <br>
+          Made to look good and be customisable.</p>
       </section>
 
       <section arira-labelledby="exampleDefaultTitle">
@@ -165,10 +168,17 @@
             </tr>
             <tr>
               <td><a href="#exampleAlignTitle" title="jump to Alignment">Alignment</a></td>
-              <td>Alignment</td>
+              <td>String</td>
               <td>Set the alignment of the items</td>
               <td>'left'</td>
               <td>'left', 'center', 'centre', 'large'</td>
+            </tr>
+            <tr>
+              <td><a href="#exampleIconsEnabledTitle" title="jump to IconsEnabled">IconsEnabled</a></td>
+              <td>Boolean</td>
+              <td>Display icons in the pills?</td>
+              <td>true</td>
+              <td>true, false</td>
             </tr>
           </tbody>
         </table>
@@ -229,10 +239,18 @@ createPills(exampleBrands)</code></pre>
           <p><b>Generates:</b></p>
         <div id="example7"></div>
       </section>
+
+      <section arira-labelledby="exampleIconsEnabledTitle">
+        <h2 id="exampleIconsEnabledTitle">IconsEnabled Example:</h2>
+        <p>You can enable or disable the icons, by setting the IconsEnabled attribute.</p>
+        <p><b>Example:</b></p>
+        <pre><code class="lang-js">createPills([],{ iconsEnabled: false})</code></pre>
+          <p><b>Generates:</b></p>
+        <div id="example8"></div>
+      </section>
+
     </div>
-
   </body>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script type="module">
     import { getBrands, createPills } from '/src/main.ts'
@@ -258,6 +276,8 @@ createPills(exampleBrands)</code></pre>
     document.getElementById('example5').append(createPills(exampleAlign, { align: 'left' }))
     document.getElementById('example6').append(createPills(exampleAlign, { align: 'center' }))
     document.getElementById('example7').append(createPills(exampleAlign, { align: 'right' }))
+
+    document.getElementById('example8').append(createPills(exampleAlign, { iconsEnabled: false }))
 
   </script>
 </html>
