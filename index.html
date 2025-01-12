@@ -107,8 +107,8 @@
       border-bottom: 1px solid rgb(0,0,0,0.1);
     }
   </style>
-  <script type="module" crossorigin src="/codepills/assets/index-CMUwUydM.js"></script>
-  <link rel="stylesheet" crossorigin href="/codepills/assets/index-DsHfraEi.css">
+  <script type="module" crossorigin src="/codepills/assets/index-LV44x8kI.js"></script>
+  <link rel="stylesheet" crossorigin href="/codepills/assets/index-DzKiT5Zv.css">
 </head>
   <body>
     <div class="page-wrap">
@@ -162,8 +162,15 @@
               <td><a href="#exampleSpacingTitle" title="jump to spacing">Spacing</a></td>
               <td>String</td>
               <td>Set the margin around each item</td>
-              <td>small</td>
-              <td>"small", "medium", "large"</td>
+              <td>'small'</td>
+              <td>'small', 'medium', 'large'</td>
+            </tr>
+            <tr>
+              <td><a href="#exampleSpacingTitle" title="jump to spacing">Spacing</a></td>
+              <td>Alignment</td>
+              <td>Set the alignment of the items</td>
+              <td>'left'</td>
+              <td>'left', 'center', 'centre', 'large'</td>
             </tr>
           </tbody>
         </table>
@@ -196,6 +203,33 @@ createPills(exampleBrands)</code></pre>
         <pre><code class="lang-js">createPills([],{ spacing: 'large'})</code></pre>
           <p><b>Generates:</b></p>
         <div id="example4"></div>
+      </section>
+
+      <section arira-labelledby="exampleAlignTitle">
+        <h2 id="exampleAlignTitle">Alignment Example:</h2>
+        <p>Alignment changes the alignment of the container for the pills. <br>
+           It may be 'left', 'center', 'centre', or 'right'
+        </p>
+
+        <p class="note">
+          <i class="mdi mdi-information"></i>
+          These examples, all use a predefined array of brand names, to simplify the demo.
+        </p>
+
+        <p><b>Example 1:</b></p>
+        <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'left'})</code></pre>
+        <p><b>Generates:</b></p>
+        <div id="example5"></div>
+        <hr class="divider">
+        <p><b>Example 2:</b></p>
+        <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'centre'})</code></pre>
+          <p><b>Generates:</b></p>
+        <div id="example6"></div>
+        <hr class="divider">
+        <p><b>Example 3:</b></p>
+        <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'right'})</code></pre>
+          <p><b>Generates:</b></p>
+        <div id="example7"></div>
       </section>
     </div>
 
