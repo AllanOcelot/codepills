@@ -33,17 +33,30 @@ function createPillItem(
 
 export function createPills(
   brandListInput: string[] | null = null,
-  options: { rounded?: boolean; spacing?: 'small' | 'medium' | 'large' } = {}
+  options: { 
+    rounded?: boolean; 
+    spacing?: 'small' | 'medium' | 'large' 
+    align?: 'left' | 'center' | 'centre' | 'right'
+  } = {}
 ) {
-  const { rounded = false, spacing = 'small' } = options
+  const { rounded = false, spacing = 'small', align = 'left' } = options
 
   // Use a map for quicker lookup.
   const brandsMap = new Map()
   brands.forEach((brand) => brandsMap.set(brand.brandName, brand))
 
+  // valid inputs for aligment are
+  const valuesAlign = new Set(["left", "center", "centre", "right"])
+
+
   // Container for our pills
   const container = document.createElement('div')
   container.classList.add('brandpill-container')
+  if(valuesAlign.has(align)){
+    container.classList.add(align)
+  }else{
+    console.warn('CodePills: None Valid value entered for alignment, not applied.')
+  }
 
   const pills: Array<Node> = [];
 
