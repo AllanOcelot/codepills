@@ -32,6 +32,12 @@
       border: 1px solid;
     }
 
+    &.no-text {
+      i {
+        margin-right: auto;
+      }
+    }
+
     // Give spacing options
     &.spaced-small {
       margin: 0 3px 3px 3px;
