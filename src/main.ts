@@ -32,15 +32,16 @@ function cleanBrandInput(inputArray: string[]){
 function createPillItem(
   item: { brandName: string; mdiIcon: string | null; humanReadable: string },
   options: { 
-    rounded?: boolean; 
+    rounded?: boolean
+    outline?: boolean
     spacing?: 'small' | 'medium' | 'large'
     iconsEnabled?: boolean;
-  } = {}
-) {
+  } = {}){
 
   // Deconstruct the options, set default values on items
   const { 
-    rounded = false, 
+    rounded = false,
+    outline = false,
     spacing = 'small', 
     iconsEnabled = true
   } = options
@@ -61,6 +62,10 @@ function createPillItem(
     element.classList.add('rounded')
   }
 
+  if(outline) {
+    element.classList.add('outline')
+  }
+
   if (['small', 'medium', 'large'].includes(spacing)) {
     element.classList.add('spaced-' + spacing)
   }
@@ -74,7 +79,8 @@ function createPillItem(
 export function createPills(
   brandListInput: string[] | null = null,
   options: { 
-    rounded?: boolean; 
+    rounded?: boolean
+    outline?: boolean
     spacing?: 'small' | 'medium' | 'large' 
     align?: 'left' | 'center' | 'centre' | 'right'
     iconsEnabled?: boolean
@@ -83,7 +89,8 @@ export function createPills(
 
   // deconstruct from options
   const { 
-    rounded = false, 
+    rounded = false,
+    outline = false,
     spacing = 'small', 
     align = 'left',
     iconsEnabled = true
@@ -97,15 +104,10 @@ export function createPills(
   // valid inputs for alignment are
   const valuesAlign = new Set(["left", "center", "centre", "right"])
 
-
   // map our brands for quicker lookup
   const brandsMap = new Map()
   brands.forEach((brand) => brandsMap.set(brand.brandName, brand))
   // the results of our search on user provided input
-
-
-
-
 
   const matchingBrands = brandListInput ? cleanBrandInput(brandListInput).map((name) => brandsMap.get(name)): brands;
 
@@ -115,9 +117,8 @@ export function createPills(
   if(valuesAlign.has(align)){
     container.classList.add(align)
   }else{
-    console.warn('CodePills: None Valid value entered for alignment, not applied.')
+    console.log('CodePills: None Valid value entered for alignment, not applied.')
   }
-
 
   // If user does not provide
   if(!brandListInput || brandListInput.length === 0){
