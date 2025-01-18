@@ -87,7 +87,7 @@ function createPill(
     element.classList.add('spaced-' + spacing)
   }
 
-  if(text){
+  if(text || !text && !iconsEnabled){
     let readableText = document.createElement('span')
     readableText.innerText = item.humanReadable
     element.append(readableText)
