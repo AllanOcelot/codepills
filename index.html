@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" />
 
-  <script type="module" crossorigin src="/codepills/assets/index-DsuSJcvn.js"></script>
-  <link rel="stylesheet" crossorigin href="/codepills/assets/index-BsA_er3X.css">
+  <script type="module" crossorigin src="/codepills/assets/index-BORyJS0N.js"></script>
+  <link rel="stylesheet" crossorigin href="/codepills/assets/index-DaiZqheX.css">
 </head>
   <body>
     <div class="page-wrap">
@@ -31,6 +31,7 @@
             <li><a href="#exampleIconsEnabledTitle">Icon Visibility </a></li>
             <li><a href="#exampleOutlineTitle">Outline</a></li>
             <li><a href="#exampleLinkTitle">Links</a></li>
+            <li><a href="#exampleTextTitle">Text</a></li>
           </ul>
         </div>
       </div>
@@ -64,7 +65,8 @@
             If an empty array is passed as the first argument, createPills will return the full list of Pills. Useful for debugging.</p> 
           <hr class="divider">
           <h3>OptionsObject</h3>
-          <p>The second argument, is an Object with the following <b>OPTIONAL</b> attributes</p>
+          <p>The second argument, is an Object with the following <b>OPTIONAL</b> attributes</p>. 
+          <p>By combining options together, you can truly customise CodePills to your project. </p>
           <table class="configTable" cellspacing="0">
             <thead>
               <tr>
@@ -116,6 +118,13 @@
                 <td>Enable linking to brand homepage, if exists</td>
                 <td>Boolean</td>
                 <td>false</td>
+                <td>true, false</td>
+              </tr>
+              <tr>
+                <td><a href="#exampleTextTitle" title="jump to Text">Text</a></td>
+                <td>Enable Human Readable text in the pill.</td>
+                <td>Boolean</td>
+                <td>true</td>
                 <td>true, false</td>
               </tr>
             </tbody>
@@ -198,11 +207,26 @@
 
         <section arira-labelledby="exampleLinkTitle">
           <h2 id="exampleLinkTitle">Link Example:</h2>
-          <p>You can enable or links, if available. They will open in a new tab.</p>
+          <p>You can enable or disable links. <br> If available. They will open in a new tab.</p>
           <p><b>Example:</b></p>
           <pre><code class="lang-js">createPills([],{ links: true})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example10"></div>
+        </section>
+
+        <section arira-labelledby="exampleTextTitle">
+          <h2 id="exampleTextTitle">Text Example:</h2>
+          <p>You can enable or text. If disabled, text will not show in the pip.</p>
+
+          <p class="note">
+            <i class="mdi mdi-information"></i>
+            If you disable text and also disable Icons - text will be output to ensure items are not empty.
+          </p>
+
+          <p><b>Example:</b></p>
+          <pre><code class="lang-js">createPills([],{ text: false})</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example11"></div>
         </section>
       </div>
 
