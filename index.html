@@ -31,6 +31,7 @@
             <li><a href="#exampleOutlineTitle">Outline</a></li>
             <li><a href="#exampleLinkTitle">Links</a></li>
             <li><a href="#exampleTextTitle">Text</a></li>
+            <li><a href="#exampleRandomTitle">Random</a></li>
           </ul>
         </div>
       </div>
@@ -124,6 +125,13 @@
                 <td>Enable Human Readable text in the pill.</td>
                 <td>Boolean</td>
                 <td>true</td>
+                <td>true, false</td>
+              </tr>
+              <tr>
+                <td><a href="#exampleRandomTitle" title="jump to Random">Random</a></td>
+                <td>Enable Random Sorting On Items</td>
+                <td>Boolean</td>
+                <td>false</td>
                 <td>true, false</td>
               </tr>
             </tbody>
@@ -226,6 +234,16 @@
           <pre><code class="lang-js">createPills([],{ text: false})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example11"></div>
+        </section>
+
+
+        <section arira-labelledby="exampleRandomTitle">
+          <h2 id="exampleRandomTitle">Random Example:</h2>
+          <p>Enabling Random will shuffle the Pills in a random order.</p>
+          <p><b>Example:</b></p>
+          <pre><code class="lang-js">createPills([],{ random: true})</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example12"></div>
         </section>
       </div>
 

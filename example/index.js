@@ -21,11 +21,18 @@ import { getBrands, createPills } from '/src/main.ts'
     document.getElementById('example5').append(createPills(exampleAlign, { align: 'left' }))
     document.getElementById('example6').append(createPills(exampleAlign, { align: 'center' }))
     document.getElementById('example7').append(createPills(exampleAlign, { align: 'right' }))
+
     // Icons disabled
     document.getElementById('example8').append(createPills(exampleAlign, { iconsEnabled: false }))
+
     // outline enabled
     document.getElementById('example9').append(createPills(exampleAlign, { outline: true }))
+
     // links enabled
     document.getElementById('example10').append(createPills(exampleAlign, { links: true }))
+
     // text enabled
     document.getElementById('example11').append(createPills(exampleAlign, { text: false }))
+
+    // Random enabled
+    document.getElementById('example12').append(createPills(exampleBrands, { random: true }))
