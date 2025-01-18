@@ -890,6 +890,14 @@
     }
   }
 
+  &.link {
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   &.outline {
     background-color: transparent;
     border: 1px solid;

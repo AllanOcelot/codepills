@@ -50,18 +50,18 @@ function createPillItem(
 
   let element: HTMLElement | HTMLAnchorElement;
 
-  console.log('links is ' + links)
-
-  if(links === true){
-    element = document.createElement('div')
-  }else{
+  if(links && links === true){
     const anchorElement = document.createElement('a') as HTMLAnchorElement
     anchorElement.href = item.url
     anchorElement.target  = "_blank"
     anchorElement.title = item.humanReadable
+    anchorElement.classList.add('link')
     element  = anchorElement
   }
 
+  if(links === false){
+    element = document.createElement('div')
+  }
 
   let iconElement;
   element.className = `brandpill ${item.brandName}`
