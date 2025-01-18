@@ -57,9 +57,8 @@ function createPillItem(
     anchorElement.title = item.humanReadable
     anchorElement.classList.add('link')
     element  = anchorElement
-  }
-
-  if(links === false){
+    console.log(element)
+  } else {
     element = document.createElement('div')
   }
 
@@ -86,7 +85,9 @@ function createPillItem(
     element.classList.add('spaced-' + spacing)
   }
 
-  element.append(item.humanReadable)
+  let readableText = document.createElement('span')
+  readableText.innerText = item.humanReadable
+  element.append(readableText)
   return element
 }
 

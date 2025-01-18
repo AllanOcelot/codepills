@@ -26,6 +26,12 @@
       border-radius: 18px;
     }
 
+    // Outline
+    &.outline {
+      background-color: transparent;
+      border: 1px solid;
+    }
+
     // Give spacing options
     &.spaced-small {
       margin: 0 3px 3px 3px;
@@ -57,6 +63,18 @@
   
     &:hover {
       opacity: 1;
+    }
+  }
+
+  // Brandpill is a link
+  a.brandpill {
+    cursor: pointer;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      span {
+        text-decoration: underline;
+      }
     }
   }
 
