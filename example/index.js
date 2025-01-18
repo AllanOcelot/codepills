@@ -27,3 +27,5 @@ import { getBrands, createPills } from '/src/main.ts'
     document.getElementById('example9').append(createPills(exampleAlign, { outline: true }))
     // links enabled
     document.getElementById('example10').append(createPills(exampleAlign, { links: true }))
+    // text enabled
+    document.getElementById('example11').append(createPills(exampleAlign, { text: false }))

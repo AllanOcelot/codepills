@@ -29,14 +29,15 @@ function cleanBrandInput(inputArray: string[]){
   return null
 }
 
-function createPillItem(
+function createPill(
   item: { brandName: string; mdiIcon: string | null; humanReadable: string, url: string },
   options: { 
     links?:   boolean
     rounded?: boolean
     outline?: boolean
     spacing?: 'small' | 'medium' | 'large'
-    iconsEnabled?: boolean;
+    iconsEnabled?: boolean
+    text?: boolean
   } = {}){
 
   // Deconstruct the options, set default values on items
@@ -45,7 +46,8 @@ function createPillItem(
     rounded = false,
     outline = false,
     spacing = 'small', 
-    iconsEnabled = true
+    iconsEnabled = true,
+    text = true
   } = options
 
   let element: HTMLElement | HTMLAnchorElement;
@@ -81,13 +83,18 @@ function createPillItem(
     element.classList.add('outline')
   }
 
-  if (['small', 'medium', 'large'].includes(spacing)) {
+  if(['small', 'medium', 'large'].includes(spacing)) {
     element.classList.add('spaced-' + spacing)
   }
 
-  let readableText = document.createElement('span')
-  readableText.innerText = item.humanReadable
-  element.append(readableText)
+  if(text){
+    let readableText = document.createElement('span')
+    readableText.innerText = item.humanReadable
+    element.append(readableText)
+  }else{
+    element.classList.add('no-text')
+  }
+
   return element
 }
 
@@ -101,7 +108,8 @@ export function createPills(
     outline?: boolean
     spacing?: 'small' | 'medium' | 'large' 
     align?: 'left' | 'center' | 'centre' | 'right'
-    iconsEnabled?: boolean
+    iconsEnabled?: boolean,
+    text?: boolean,
   } = {}){
 
   // deconstruct from options
@@ -111,7 +119,8 @@ export function createPills(
     outline = false,
     spacing = 'small', 
     align = 'left',
-    iconsEnabled = true
+    iconsEnabled = true,
+    text = true
   } = options
 
   // HTML node elements we inject into each other or DOM
@@ -141,13 +150,13 @@ export function createPills(
   // If user does not provide
   if(!brandListInput || brandListInput.length === 0){
     brands.forEach(item => {
-      const pill = createPillItem(item, { links, rounded, outline, spacing, iconsEnabled })
+      const pill = createPill(item, { links, rounded, outline, spacing, iconsEnabled, text })
       pills.push(pill)      
     })
   } else {
     matchingBrands.forEach((item) => {
       if (item) {
-        const pill = createPillItem(item, { links, rounded, outline, spacing, iconsEnabled })
+        const pill = createPill(item, { links, rounded, outline, spacing, iconsEnabled, text })
         pills.push(pill);
       }
     })
