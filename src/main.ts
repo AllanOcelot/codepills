@@ -107,9 +107,7 @@ export function createPills(
 
 
 
-  const matchingBrands = brandListInput
-  ? cleanBrandInput(brandListInput).map((name) => brandsMap.get(name))
-  : brands;
+  const matchingBrands = brandListInput ? cleanBrandInput(brandListInput).map((name) => brandsMap.get(name)): brands;
 
 
   // Container for our pills

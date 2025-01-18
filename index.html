@@ -12,103 +12,8 @@
   <!-- use prism for showing code snippets , love you prism -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" />
+  <link rel="stylesheet" href="/example/style.css">
 
-  <style>
-    body, html {
-      background: #8cb3c5;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      font-family: "Roboto", serif;
-    }
-
-    h1,h2,h3,h4,h5,p {
-      font-family: "Roboto", serif;
-    }
-
-    h1,h2,h3,h4,h5 {
-      margin-bottom: 0;
-    }
-
-    p {
-      margin-bottom: 10px;
-      font-size: 1em;
-      line-height: 1.4em;
-    }
-
-    .page-wrap {
-      display: flex;
-      flex-direction: column;
-      margin: auto;
-      background: #f1f1f1;
-      box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
-      width: 100%;
-      max-width: 1024px;
-    }
-
-    section {
-      display: flex;
-      flex-direction: column;
-      padding: 10px 40px 40px 40px;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-      margin-bottom: 30px;
-    }
-    section.intro {
-      padding: 80px 40px;
-      margin-bottom: 5vh;
-      background:#fff;
-    }
-    
-    section p.note {
-      display: flex;
-      background: #3358d3;
-      font-weight: normal;
-      border-top: 4px solid #4f77f8;
-      color: #fff;
-      padding: 10px 10px;
-      align-items: center;
-    }
-
-    section p.note i {
-      font-size: 1.6em;
-      margin-right: 12px;
-      opacity: .9;
-    }
-
-    section .divider {
-      margin: 20px 0 20px 0;
-      opacity: .3;
-    }
-
-    .configTable {
-
-    }
-    .configTable thead th {
-      background: #1f6fb1;
-      padding: 20px;
-      border: none;
-      color: #fff;
-      text-align: left;
-    }
-    .configTable tbody tr {
-      background: #e6e6e6;
-    }
-    .configTable tbody tr:nth-child(odd) {
-      background: #f0f0f0;
-    }
-    .configTable tbody td {
-      padding: 10px 20px;
-      text-align: left;
-      border-bottom: 1px solid rgb(0,0,0,0.1);
-    }
-  </style>
 </head>
   <body>
     <div class="page-wrap">
@@ -252,32 +157,5 @@ createPills(exampleBrands)</code></pre>
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-  <script type="module">
-    import { getBrands, createPills } from '/src/main.ts'
-
-    //console.log(getBrands())
-
-    const exampleBrands = ['VUE.JS', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
-
-    // providing a function to quickly allow people to populate elements via js rather than manually typing out our classes
-    document.getElementById('example1').append(createPills([],{rounded: true, spacing: 'medium', align: 'center'}))
-
-    // specific list
-    document.getElementById('example2').append(createPills(exampleBrands))
-
-    // rounded pills
-    document.getElementById('example3').append(createPills(exampleBrands,{ rounded: true }))
-
-    // spacing example
-    document.getElementById('example4').append(createPills(exampleBrands, { spacing: 'large' }))
-
-    // Alignment 
-    const exampleAlign = ['html','css3','python','aspnet']
-    document.getElementById('example5').append(createPills(exampleAlign, { align: 'left' }))
-    document.getElementById('example6').append(createPills(exampleAlign, { align: 'center' }))
-    document.getElementById('example7').append(createPills(exampleAlign, { align: 'right' }))
-
-    document.getElementById('example8').append(createPills(exampleAlign, { iconsEnabled: false }))
-
-  </script>
+  <script type="module" src="/example/index.js"></script>
 </html>
