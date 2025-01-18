@@ -29,6 +29,7 @@
             <li><a href="#exampleAlignTitle">Alignment Options</a></li>
             <li><a href="#exampleIconsEnabledTitle">Icon Visibility </a></li>
             <li><a href="#exampleOutlineTitle">Outline</a></li>
+            <li><a href="#exampleLinkTitle">Links</a></li>
           </ul>
         </div>
       </div>
@@ -109,6 +110,13 @@
                 <td>false</td>
                 <td>true, false</td>
               </tr>
+              <tr>
+                <td><a href="#exampleLinksTitle" title="jump to Links">Links</a></td>
+                <td>Enable linking to brand homepage, if exists</td>
+                <td>Boolean</td>
+                <td>false</td>
+                <td>true, false</td>
+              </tr>
             </tbody>
           </table>
         </section>
@@ -185,6 +193,15 @@
           <pre><code class="lang-js">createPills([],{ outline: true})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example9"></div>
+        </section>
+
+        <section arira-labelledby="exampleLinkTitle">
+          <h2 id="exampleLinkTitle">Link Example:</h2>
+          <p>You can enable or links, if available. They will open in a new tab.</p>
+          <p><b>Example:</b></p>
+          <pre><code class="lang-js">createPills([],{ links: true})</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example10"></div>
         </section>
       </div>
 
