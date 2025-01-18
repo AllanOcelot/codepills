@@ -103,6 +103,7 @@ function createPill(
 export function createPills(
   brandListInput: string[] | null = null,
   options: { 
+    random?: boolean,
     links?:   boolean
     rounded?: boolean
     outline?: boolean
@@ -114,6 +115,7 @@ export function createPills(
 
   // deconstruct from options
   const { 
+    random  = false,
     links   = false,
     rounded = false,
     outline = false,
@@ -124,7 +126,7 @@ export function createPills(
   } = options
 
   // HTML node elements we inject into each other or DOM
-  const pills: Array<Node> = [];
+  let pills: Array<Node> = [];
   const container = document.createElement('div')
 
 
@@ -162,6 +164,11 @@ export function createPills(
     })
   }
 
+
+  if(random){
+    const shuffleArray = (pills: Array<Node>) => pills.sort(() => Math.random() - 0.5)
+    pills = shuffleArray([...pills])
+  }
 
   pills.forEach((pill) => {
     container.appendChild(pill)
