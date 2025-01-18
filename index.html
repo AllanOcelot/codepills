@@ -17,142 +17,161 @@
 </head>
   <body>
     <div class="page-wrap">
-      <section class="intro" aria-labelledby="pageTitle">
-        <h1 id="pageTitle">CodePills:</h1>
-        <p>A super simple way of displaying tech 'brands' in pill form. <br>
-          Made to look good and be customisable.</p>
-      </section>
+      <div class="sidebar">
+        <div class="sticky">
+          <p>Quick links</p>
+          <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#optionsTitle">Config / Options</a></li>
+            <li><a href="#exampleSpecificTitle">Specify Output</a></li>
+            <li><a href="#exampleRoundedTitle">Rounded Items</a></li>
+            <li><a href="#exampleSpacingTitle">Spacing Options</a></li>
+            <li><a href="#exampleAlignTitle">Alignment Options</a></li>
+            <li><a href="#exampleIconsEnabledTitle">Icon Visibility </a></li>
+          </ul>
+        </div>
+      </div>
 
-      <section arira-labelledby="exampleDefaultTitle">
-        <h2 id="exampleDefaultTitle">Default:</h2>
-        <p>With no arguments, Codepills will output all available pills with no styling attached.</p>
-        <p><b>Example:</b></p>
-        <pre aria-label="Code example: An example of calling CreatePills function"><code class="lang-js">createPills()</code></pre>
-          <p><b>Generates:</b></p>
-        <div id="example1"></div>
-      </section>
-
-
-      <section aria-labelledby="optionsTitle">
-        <h2 id="optionsTitle">Options and Config</h2>
-        <p>Configuring pills is simple, the createPills function takes two arguments. An array and an Object. Both are optional.</p>
-        <pre aria-label="basic usage example of pills"><code class="lang-js">createPills(ArrayOfBrands, OptionsObject)</code></pre>
-        <h3>ArrayOfBrands</h3>
-        <p>The first argument for createPills is an array of strings. The strings should each be a brand name. For example "html5" or "css". <br></p>
-        <pre><code class="lang-js">const arrayofBrands = ['vuejs','digitalocean','vite','gatsby','tailwindcss','netlify','php']</code></pre>
-        <p class="note">
-          <i class="mdi mdi-information"></i>
-          If an empty array is passed as the first argument, createPills will return the full list of Pills. Useful for debugging.</p> 
-        <hr class="divider">
-        <h3>OptionsObject</h3>
-        <p>The second argument, is an Object with the following <b>OPTIONAL</b> attributes</p>
-        <table class="configTable" cellspacing="0">
-          <thead>
-            <tr>
-              <th>Property</td>
-              <th>Type</td>
-              <th>Description</td>
-              <th>Default</th>
-              <th>Supported Values</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><a href="#exampleRoundedTitle" title="jump to rounded">Rounded</a></td>
-              <td>Boolean</td>
-              <td>Apply rounded corners to the pills</td>
-              <td>false</td>
-              <td>true,false</td>
-            </tr>
-            <tr>
-              <td><a href="#exampleSpacingTitle" title="jump to spacing">Spacing</a></td>
-              <td>String</td>
-              <td>Set the margin around each item</td>
-              <td>'small'</td>
-              <td>'small', 'medium', 'large'</td>
-            </tr>
-            <tr>
-              <td><a href="#exampleAlignTitle" title="jump to Alignment">Alignment</a></td>
-              <td>String</td>
-              <td>Set the alignment of the items</td>
-              <td>'left'</td>
-              <td>'left', 'center', 'centre', 'large'</td>
-            </tr>
-            <tr>
-              <td><a href="#exampleIconsEnabledTitle" title="jump to IconsEnabled">IconsEnabled</a></td>
-              <td>Boolean</td>
-              <td>Display icons in the pills?</td>
-              <td>true</td>
-              <td>true, false</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
+      <div class="main-content">
+        <section class="intro" id="intro" aria-labelledby="pageTitle">
+          <h1 id="pageTitle">CodePills:</h1>
+          <p>A super simple way of displaying tech 'brands' in pill form. <br>
+            Made to look good and be customisable.</p>
+        </section>
   
-      <section arira-labelledby="exampleSpecificTitle">
-        <h2 id="exampleSpecificTitle">Specific list:</h2>
-        <p>Passing in an array of strings to Codepills will generate pills based on that array.</p>
-        <p><b>Example:</b></p>
-        <pre><code class="lang-js">const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
-createPills(exampleBrands)</code></pre>
+        <section arira-labelledby="exampleDefaultTitle">
+          <h2 id="exampleDefaultTitle">Default:</h2>
+          <p>With no arguments, Codepills will output all available pills with no styling attached.</p>
+          <p><b>Example:</b></p>
+          <pre aria-label="Code example: An example of calling CreatePills function"><code class="lang-js">createPills()</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example1"></div>
+        </section>
+  
+  
+        <section aria-labelledby="optionsTitle">
+          <h2 id="optionsTitle">Options and Config</h2>
+          <p>Configuring pills is simple, the createPills function takes two arguments. An array and an Object. Both are optional.</p>
+          <pre aria-label="basic usage example of pills"><code class="lang-js">createPills(ArrayOfBrands, OptionsObject)</code></pre>
+          <h3>ArrayOfBrands</h3>
+          <p>The first argument for createPills is an array of strings. The strings should each be a brand name. For example "html5" or "css". <br></p>
+          <pre><code class="lang-js">const arrayofBrands = ['vuejs','digitalocean','vite','gatsby','tailwindcss','netlify','php']</code></pre>
+          <p class="note">
+            <i class="mdi mdi-information"></i>
+            If an empty array is passed as the first argument, createPills will return the full list of Pills. Useful for debugging.</p> 
+          <hr class="divider">
+          <h3>OptionsObject</h3>
+          <p>The second argument, is an Object with the following <b>OPTIONAL</b> attributes</p>
+          <table class="configTable" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Property</td>
+                <th>Type</td>
+                <th>Description</td>
+                <th>Default</th>
+                <th>Supported Values</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="#exampleRoundedTitle" title="jump to rounded">Rounded</a></td>
+                <td>Boolean</td>
+                <td>Apply rounded corners to the pills</td>
+                <td>false</td>
+                <td>true,false</td>
+              </tr>
+              <tr>
+                <td><a href="#exampleSpacingTitle" title="jump to spacing">Spacing</a></td>
+                <td>String</td>
+                <td>Set the margin around each item</td>
+                <td>'small'</td>
+                <td>'small', 'medium', 'large'</td>
+              </tr>
+              <tr>
+                <td><a href="#exampleAlignTitle" title="jump to Alignment">Alignment</a></td>
+                <td>String</td>
+                <td>Set the alignment of the items</td>
+                <td>'left'</td>
+                <td>'left', 'center', 'centre', 'large'</td>
+              </tr>
+              <tr>
+                <td><a href="#exampleIconsEnabledTitle" title="jump to IconsEnabled">IconsEnabled</a></td>
+                <td>Boolean</td>
+                <td>Display icons in the pills?</td>
+                <td>true</td>
+                <td>true, false</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+  
+    
+        <section arira-labelledby="exampleSpecificTitle">
+          <h2 id="exampleSpecificTitle">Specific list:</h2>
+          <p>Passing in an array of strings to Codepills will generate pills based on that array.</p>
+          <p><b>Example:</b></p>
+          <pre><code class="lang-js">const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
+  createPills(exampleBrands)</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example2"></div>
+        </section>
+  
+        <section arira-labelledby="exampleRoundedTitle">
+          <h2 id="exampleRoundedTitle">Rounded list:</h2>
+          <p>You may enable, rounding, by passing the second argument as true. Default is false.</p>
+          <p><b>Example:</b></p>
+          <pre><code class="lang-js">createPills([], {rounded: true})</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example3"></div>
+        </section>
+  
+        <section arira-labelledby="exampleSpacingTitle">
+          <h2 id="exampleSpacingTitle">Spacing Example:</h2>
+          <p>Spacing changes the spacing between each item. It may be 'small', 'medium', or 'large'</p>
+          <p><b>Example:</b></p>
+          <pre><code class="lang-js">createPills([],{ spacing: 'large'})</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example4"></div>
+        </section>
+  
+        <section arira-labelledby="exampleAlignTitle">
+          <h2 id="exampleAlignTitle">Alignment Example:</h2>
+          <p>Alignment changes the alignment of the container for the pills. <br>
+             It may be 'left', 'center', 'centre', or 'right'
+          </p>
+  
+          <p class="note">
+            <i class="mdi mdi-information"></i>
+            These examples, all use a predefined array of brand names, to simplify the demo.
+          </p>
+  
+          <p><b>Example 1:</b></p>
+          <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'left'})</code></pre>
           <p><b>Generates:</b></p>
-        <div id="example2"></div>
-      </section>
+          <div id="example5"></div>
+          <hr class="divider">
+          <p><b>Example 2:</b></p>
+          <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'centre'})</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example6"></div>
+          <hr class="divider">
+          <p><b>Example 3:</b></p>
+          <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'right'})</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example7"></div>
+        </section>
+  
+        <section arira-labelledby="exampleIconsEnabledTitle">
+          <h2 id="exampleIconsEnabledTitle">IconsEnabled Example:</h2>
+          <p>You can enable or disable the icons, by setting the IconsEnabled attribute.</p>
+          <p><b>Example:</b></p>
+          <pre><code class="lang-js">createPills([],{ iconsEnabled: false})</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example8"></div>
+        </section>
+      </div>
 
-      <section arira-labelledby="exampleRoundedTitle">
-        <h2 id="exampleRoundedTitle">Rounded list:</h2>
-        <p>You may enable, rounding, by passing the second argument as true. Default is false.</p>
-        <p><b>Example:</b></p>
-        <pre><code class="lang-js">createPills([], {rounded: true})</code></pre>
-          <p><b>Generates:</b></p>
-        <div id="example3"></div>
-      </section>
-
-      <section arira-labelledby="exampleSpacingTitle">
-        <h2 id="exampleSpacingTitle">Spacing Example:</h2>
-        <p>Spacing changes the spacing between each item. It may be 'small', 'medium', or 'large'</p>
-        <p><b>Example:</b></p>
-        <pre><code class="lang-js">createPills([],{ spacing: 'large'})</code></pre>
-          <p><b>Generates:</b></p>
-        <div id="example4"></div>
-      </section>
-
-      <section arira-labelledby="exampleAlignTitle">
-        <h2 id="exampleAlignTitle">Alignment Example:</h2>
-        <p>Alignment changes the alignment of the container for the pills. <br>
-           It may be 'left', 'center', 'centre', or 'right'
-        </p>
-
-        <p class="note">
-          <i class="mdi mdi-information"></i>
-          These examples, all use a predefined array of brand names, to simplify the demo.
-        </p>
-
-        <p><b>Example 1:</b></p>
-        <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'left'})</code></pre>
-        <p><b>Generates:</b></p>
-        <div id="example5"></div>
-        <hr class="divider">
-        <p><b>Example 2:</b></p>
-        <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'centre'})</code></pre>
-          <p><b>Generates:</b></p>
-        <div id="example6"></div>
-        <hr class="divider">
-        <p><b>Example 3:</b></p>
-        <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'right'})</code></pre>
-          <p><b>Generates:</b></p>
-        <div id="example7"></div>
-      </section>
-
-      <section arira-labelledby="exampleIconsEnabledTitle">
-        <h2 id="exampleIconsEnabledTitle">IconsEnabled Example:</h2>
-        <p>You can enable or disable the icons, by setting the IconsEnabled attribute.</p>
-        <p><b>Example:</b></p>
-        <pre><code class="lang-js">createPills([],{ iconsEnabled: false})</code></pre>
-          <p><b>Generates:</b></p>
-        <div id="example8"></div>
-      </section>
+      
 
     </div>
   </body>
