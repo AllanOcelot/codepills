@@ -28,6 +28,7 @@
             <li><a href="#exampleSpacingTitle">Spacing Options</a></li>
             <li><a href="#exampleAlignTitle">Alignment Options</a></li>
             <li><a href="#exampleIconsEnabledTitle">Icon Visibility </a></li>
+            <li><a href="#exampleOutlineTitle">Outline</a></li>
           </ul>
         </div>
       </div>
@@ -66,8 +67,8 @@
             <thead>
               <tr>
                 <th>Property</td>
-                <th>Type</td>
                 <th>Description</td>
+                <th>Type</td>
                 <th>Default</th>
                 <th>Supported Values</td>
               </tr>
@@ -75,30 +76,37 @@
             <tbody>
               <tr>
                 <td><a href="#exampleRoundedTitle" title="jump to rounded">Rounded</a></td>
-                <td>Boolean</td>
                 <td>Apply rounded corners to the pills</td>
+                <td>Boolean</td>
                 <td>false</td>
                 <td>true,false</td>
               </tr>
               <tr>
                 <td><a href="#exampleSpacingTitle" title="jump to spacing">Spacing</a></td>
-                <td>String</td>
                 <td>Set the margin around each item</td>
+                <td>String</td>
                 <td>'small'</td>
                 <td>'small', 'medium', 'large'</td>
               </tr>
               <tr>
                 <td><a href="#exampleAlignTitle" title="jump to Alignment">Alignment</a></td>
-                <td>String</td>
                 <td>Set the alignment of the items</td>
+                <td>String</td>
                 <td>'left'</td>
                 <td>'left', 'center', 'centre', 'large'</td>
               </tr>
               <tr>
                 <td><a href="#exampleIconsEnabledTitle" title="jump to IconsEnabled">IconsEnabled</a></td>
-                <td>Boolean</td>
                 <td>Display icons in the pills?</td>
+                <td>Boolean</td>
                 <td>true</td>
+                <td>true, false</td>
+              </tr>
+              <tr>
+                <td><a href="#exampleOutlineTitle" title="jump to Outline">Outline</a></td>
+                <td>Display Outlined Styling</td>
+                <td>Boolean</td>
+                <td>false</td>
                 <td>true, false</td>
               </tr>
             </tbody>
@@ -168,6 +176,15 @@
           <pre><code class="lang-js">createPills([],{ iconsEnabled: false})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example8"></div>
+        </section>
+
+        <section arira-labelledby="exampleOutlineTitle">
+          <h2 id="exampleOutlineTitle">Outline Example:</h2>
+          <p>You can enable or outlines, by setting the outline attribute.</p>
+          <p><b>Example:</b></p>
+          <pre><code class="lang-js">createPills([],{ outline: true})</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example9"></div>
         </section>
       </div>
 

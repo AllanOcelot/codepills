@@ -123,13 +123,13 @@ export function createPills(
   // If user does not provide
   if(!brandListInput || brandListInput.length === 0){
     brands.forEach(item => {
-      const pill = createPillItem(item, { rounded, spacing, iconsEnabled })
+      const pill = createPillItem(item, { rounded, outline, spacing, iconsEnabled })
       pills.push(pill)      
     })
   } else {
     matchingBrands.forEach((item) => {
       if (item) {
-        const pill = createPillItem(item, { rounded, spacing, iconsEnabled })
+        const pill = createPillItem(item, { rounded, outline, spacing, iconsEnabled })
         pills.push(pill);
       }
     })
