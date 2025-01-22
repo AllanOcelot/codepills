@@ -64,6 +64,12 @@ function createPill(
     element = document.createElement('div')
   }
 
+  // Apply styling 
+  element.style.background = item.brandPrimary
+  if(item.color){
+    element.style.color = item.color
+  }
+
   let iconElement;
   element.className = `brandpill ${item.brandName}`
 
