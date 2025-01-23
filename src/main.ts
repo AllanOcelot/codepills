@@ -1,6 +1,9 @@
 import { brands } from './brands'
 import './styles/main.scss'
 
+// A list of animations currently in BrandPills
+const preDefinedAnimationsList = ['fade']
+
 export function getBrands(){
   const listContainer = document.createElement('ul')
   brands.forEach(element => {
@@ -30,7 +33,7 @@ function cleanBrandInput(inputArray: string[]){
 }
 
 function createPill(
-  item: { brandName: string; mdiIcon: string | null; humanReadable: string, url: string },
+  item: { brandName: string; mdiIcon: string | null; humanReadable: string, url: string, color: string, brandPrimary: string },
   options: { 
     links?:   boolean
     rounded?: boolean
@@ -38,6 +41,7 @@ function createPill(
     spacing?: 'small' | 'medium' | 'large'
     iconsEnabled?: boolean
     text?: boolean
+    animation? : 'fade' | null
   } = {}){
 
   // Deconstruct the options, set default values on items
@@ -47,7 +51,8 @@ function createPill(
     outline = false,
     spacing = 'small', 
     iconsEnabled = true,
-    text = true
+    text = true,
+    animation = null
   } = options
 
   let element: HTMLElement | HTMLAnchorElement;
@@ -110,12 +115,20 @@ function createPill(
     element.classList.add('no-text')
   }
 
+
+  // If The User Has Animations, we should add the corrosponding "Starting" class to each item here.
+  // Then loop over it in the create method to init the anim for each item.
+  if(animation && preDefinedAnimationsList.includes(animation.toLocaleLowerCase()) )  {
+    element.classList.add('animation-' + animation)
+  }
+
   return element
 }
 
 
 
-export function createPills(
+export function createBrandPills(
+  element: HTMLElement, 
   brandListInput: string[] | null = null,
   options: { 
     random?: boolean,
@@ -126,6 +139,7 @@ export function createPills(
     align?: 'left' | 'center' | 'centre' | 'right'
     iconsEnabled?: boolean,
     text?: boolean,
+    animation? : 'fade' 
   } = {}){
 
   // deconstruct from options
@@ -137,7 +151,8 @@ export function createPills(
     spacing = 'small', 
     align = 'left',
     iconsEnabled = true,
-    text = true
+    text = true,
+    animation = null
   } = options
 
   // HTML node elements we inject into each other or DOM
@@ -154,7 +169,6 @@ export function createPills(
   // the results of our search on user provided input
 
   const matchingBrands = brandListInput ? cleanBrandInput(brandListInput).map((name) => brandsMap.get(name)): brands;
-
 
   // Container for our pills
   container.classList.add('brandpill-container')
@@ -185,9 +199,19 @@ export function createPills(
     pills = shuffleArray([...pills])
   }
 
-  pills.forEach((pill) => {
+  pills.forEach((pill, index) => {
     container.appendChild(pill)
+
+    // If animation is enabled, each pill should have an active class added to it after X
+    if(animation && preDefinedAnimationsList.includes(animation.toLocaleLowerCase()) )
+    window.setTimeout(() => {
+      container.getElementsByClassName('brandpill')[index].classList.add('active')
+    }, 420 * index)
   });
 
-  return container
+
+  // If animation is enabled, we should 
+
+  // populate the dom element given to us.
+  element.append(container)
 }
