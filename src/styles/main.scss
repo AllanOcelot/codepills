@@ -68,6 +68,16 @@
     &:hover {
       opacity: 1;
     }
+
+    // Animation work 
+    &.animation-fade {
+      opacity: 0;
+      transition: all .3s;
+      &.active {
+        opacity: 1;
+        transition: opacity 1s;
+      }
+    }
   }
 
   // Brandpill is a link

@@ -47,7 +47,7 @@
           <h2 id="exampleDefaultTitle">Default:</h2>
           <p>With no arguments, Codepills will output all available pills with no styling attached.</p>
           <p><b>Example:</b></p>
-          <pre aria-label="Code example: An example of calling CreatePills function"><code class="lang-js">createPills()</code></pre>
+          <pre aria-label="Code example: An example of calling createBrandPills function"><code class="lang-js">createBrandPills()</code></pre>
             <p><b>Generates:</b></p>
           <div id="example1"></div>
         </section>
@@ -55,14 +55,20 @@
   
         <section aria-labelledby="optionsTitle">
           <h2 id="optionsTitle">Options and Config</h2>
-          <p>Configuring pills is simple, the createPills function takes two arguments. An array and an Object. Both are optional.</p>
-          <pre aria-label="basic usage example of pills"><code class="lang-js">createPills(ArrayOfBrands, OptionsObject)</code></pre>
+          <p>Configuring pills is simple, the createBrandPills function takes three arguments.
+            <ul>
+              <li>1. HTMLElement you wish the Pills to be inserted into.</li>
+              <li>2. ( Optional ) - An array of brand names you'd like to display</li>
+              <li>3. ( Optional ) - Options to configure CodePills with a variety of options!</li>
+            </ul>
+          </p>
+          <pre aria-label="basic usage example of pills"><code class="lang-js">createBrandPills(ArrayOfBrands, OptionsObject)</code></pre>
           <h3>ArrayOfBrands</h3>
-          <p>The first argument for createPills is an array of strings. The strings should each be a brand name. For example "html5" or "css". <br></p>
+          <p>The first argument for createBrandPills is an array of strings. The strings should each be a brand name. For example "html5" or "css". <br></p>
           <pre><code class="lang-js">const arrayofBrands = ['vuejs','digitalocean','vite','gatsby','tailwindcss','netlify','php']</code></pre>
           <p class="note">
             <i class="mdi mdi-information"></i>
-            If an empty array is passed as the first argument, createPills will return the full list of Pills. Useful for debugging.</p> 
+            If an empty array is passed as the first argument, createBrandPills will return the full list of Pills. Useful for debugging.</p> 
           <hr class="divider">
           <h3>OptionsObject</h3>
           <p>The second argument, is an Object with the following <b>OPTIONAL</b> attributes</p>. 
@@ -144,7 +150,7 @@
           <p>Passing in an array of strings to Codepills will generate pills based on that array.</p>
           <p><b>Example:</b></p>
           <pre><code class="lang-js">const exampleBrands = ['vuejs', 'digitalocean', 'vite', 'gatsby', 'tailwindcss', 'netlify', 'php']
-  createPills(exampleBrands)</code></pre>
+  createBrandPills(HTMLElement, exampleBrands)</code></pre>
             <p><b>Generates:</b></p>
           <div id="example2"></div>
         </section>
@@ -153,7 +159,7 @@
           <h2 id="exampleRoundedTitle">Rounded list:</h2>
           <p>You may enable, rounding, by passing the second argument as true. Default is false.</p>
           <p><b>Example:</b></p>
-          <pre><code class="lang-js">createPills([], {rounded: true})</code></pre>
+          <pre><code class="lang-js">createBrandPills([], {rounded: true})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example3"></div>
         </section>
@@ -162,7 +168,7 @@
           <h2 id="exampleSpacingTitle">Spacing Example:</h2>
           <p>Spacing changes the spacing between each item. It may be 'small', 'medium', or 'large'</p>
           <p><b>Example:</b></p>
-          <pre><code class="lang-js">createPills([],{ spacing: 'large'})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, [],{ spacing: 'large'})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example4"></div>
         </section>
@@ -179,17 +185,17 @@
           </p>
   
           <p><b>Example 1:</b></p>
-          <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'left'})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, exampleArrayBrands,{ alignment: 'left'})</code></pre>
           <p><b>Generates:</b></p>
           <div id="example5"></div>
           <hr class="divider">
           <p><b>Example 2:</b></p>
-          <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'centre'})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, exampleArrayBrands,{ alignment: 'centre'})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example6"></div>
           <hr class="divider">
           <p><b>Example 3:</b></p>
-          <pre><code class="lang-js">createPills(exampleArrayBrands,{ alignment: 'right'})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, exampleArrayBrands,{ alignment: 'right'})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example7"></div>
         </section>
@@ -198,7 +204,7 @@
           <h2 id="exampleIconsEnabledTitle">IconsEnabled Example:</h2>
           <p>You can enable or disable the icons, by setting the IconsEnabled attribute.</p>
           <p><b>Example:</b></p>
-          <pre><code class="lang-js">createPills([],{ iconsEnabled: false})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, [], { iconsEnabled: false})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example8"></div>
         </section>
@@ -207,7 +213,7 @@
           <h2 id="exampleOutlineTitle">Outline Example:</h2>
           <p>You can enable or outlines, by setting the outline attribute.</p>
           <p><b>Example:</b></p>
-          <pre><code class="lang-js">createPills([],{ outline: true})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, [], { outline: true})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example9"></div>
         </section>
@@ -216,7 +222,7 @@
           <h2 id="exampleLinkTitle">Link Example:</h2>
           <p>You can enable or disable links. <br> If available. They will open in a new tab.</p>
           <p><b>Example:</b></p>
-          <pre><code class="lang-js">createPills([],{ links: true})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, [], { links: true})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example10"></div>
         </section>
@@ -231,7 +237,7 @@
           </p>
 
           <p><b>Example:</b></p>
-          <pre><code class="lang-js">createPills([],{ text: false})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, [], { text: false})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example11"></div>
         </section>
@@ -241,24 +247,22 @@
           <h2 id="exampleRandomTitle">Random Example:</h2>
           <p>Enabling Random will shuffle the Pills in a random order.</p>
           <p><b>Example:</b></p>
-          <pre><code class="lang-js">createPills([],{ random: true})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, [], { random: true})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example12"></div>
         </section>
+        
 
-
-        <section arira-labelledby="exampleGradientTitle">
-          <h2 id="exampleGradientTitle">Gradient Example:</h2>
-          <p>Enabling Gradient will add a slight gradient to items</p>
+        <section arira-labelledby="exampleAnimationsTitle">
+          <h2 id="exampleAnimationsTitle">Animations Example: - Fade</h2>
+          <p>Setting the value to a valid Animation type ( found in attribute table ) will apply that animation to the items.</p>
+          <button id="example13Button">Click Me To Animate!</button>
           <p><b>Example:</b></p>
-          <pre><code class="lang-js">createPills([],{ random: true})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, [], { random: true})</code></pre>
             <p><b>Generates:</b></p>
-          <div id="example12"></div>
+          <div id="example13"></div>
         </section>
       </div>
-
-      
-
     </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
