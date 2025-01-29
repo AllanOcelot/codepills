@@ -38,6 +38,7 @@ function createPill(
     spacing?: 'small' | 'medium' | 'large'
     iconsEnabled?: boolean
     text?: boolean
+    gradient?: boolean
   } = {}){
 
   // Deconstruct the options, set default values on items
@@ -47,7 +48,8 @@ function createPill(
     outline = false,
     spacing = 'small', 
     iconsEnabled = true,
-    text = true
+    text = true,
+    gradient = false
   } = options
 
   let element: HTMLElement | HTMLAnchorElement;
@@ -76,9 +78,8 @@ function createPill(
   }
 
   element.style.borderColor   = item.brandPrimary
-  
-
-
+ 
+  // Icon 
   let iconElement;
   element.className = `brandpill ${item.brandName}`
 
@@ -96,6 +97,10 @@ function createPill(
 
   if(outline) {
     element.classList.add('outline')
+  }
+
+  if(gradient){
+    element.classList.add('gradient')
   }
 
   if(['small', 'medium', 'large'].includes(spacing)) {
@@ -126,6 +131,7 @@ export function createPills(
     align?: 'left' | 'center' | 'centre' | 'right'
     iconsEnabled?: boolean,
     text?: boolean,
+    gradient?: boolean
   } = {}){
 
   // deconstruct from options
@@ -137,13 +143,13 @@ export function createPills(
     spacing = 'small', 
     align = 'left',
     iconsEnabled = true,
-    text = true
+    text = true,
+    gradient = false,
   } = options
 
   // HTML node elements we inject into each other or DOM
   let pills: Array<Node> = [];
   const container = document.createElement('div')
-
 
   // valid inputs for alignment are
   const valuesAlign = new Set(["left", "center", "centre", "right"])
@@ -151,10 +157,9 @@ export function createPills(
   // map our brands for quicker lookup
   const brandsMap = new Map()
   brands.forEach((brand) => brandsMap.set(brand.brandName, brand))
+
   // the results of our search on user provided input
-
   const matchingBrands = brandListInput ? cleanBrandInput(brandListInput).map((name) => brandsMap.get(name)): brands;
-
 
   // Container for our pills
   container.classList.add('brandpill-container')
