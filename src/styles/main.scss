@@ -59,14 +59,19 @@
       font-weight: normal;
       margin-right: 8px;
     }
-  
-    &.brandpill-dark,
-    &.brandpill-dark i {
-    //  color: #e7e7e7fa;
-    }
-  
+    
     &:hover {
       opacity: 1;
+    }
+
+    // Animation work 
+    &.animation-fade {
+      opacity: 0;
+      transition: all .3s;
+      &.active {
+        opacity: 1;
+        transition: opacity 1s;
+      }
     }
   }
 
