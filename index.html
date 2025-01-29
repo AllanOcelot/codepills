@@ -32,6 +32,8 @@
             <li><a href="#exampleLinkTitle">Links</a></li>
             <li><a href="#exampleTextTitle">Text</a></li>
             <li><a href="#exampleRandomTitle">Random</a></li>
+            <li><a href="#exampleAnimationsTitle">Animation - Fade </a></li>
+            <li><a href="#exampleGradientTitle">Gradients</a></li>
           </ul>
         </div>
       </div>
@@ -136,6 +138,20 @@
               <tr>
                 <td><a href="#exampleRandomTitle" title="jump to Random">Random</a></td>
                 <td>Enable Random Sorting On Items</td>
+                <td>Boolean</td>
+                <td>false</td>
+                <td>true, false</td>
+              </tr>
+              <tr>
+                <td><a href="#exampleAnimationsTitle" title="jump to Animations">Animation</a></td>
+                <td>Pass a string to enable animations on creation</td>
+                <td>String</td>
+                <td>null</td>
+                <td>'fade'</td>
+              </tr>
+              <tr>
+                <td><a href="#exampleGradientTitle" title="jump to Gradient">Gradient</a></td>
+                <td>Enable gradients on items</td>
                 <td>Boolean</td>
                 <td>false</td>
                 <td>true, false</td>
@@ -258,9 +274,18 @@
           <p>Setting the value to a valid Animation type ( found in attribute table ) will apply that animation to the items.</p>
           <button id="example13Button">Click Me To Animate!</button>
           <p><b>Example:</b></p>
-          <pre><code class="lang-js">createBrandPills(HTMLElement, [], { random: true})</code></pre>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, [], { animation: 'fade'})</code></pre>
             <p><b>Generates:</b></p>
           <div id="example13"></div>
+        </section>
+
+        <section arira-labelledby="exampleGradientTitle">
+          <h2 id="exampleGradientTitle">Gradient Example</h2>
+          <p>Enabling gradients will add a subtle gradient to each pill</p>
+          <p><b>Example:</b></p>
+          <pre><code class="lang-js">createBrandPills(HTMLElement, [], { gradient: true})</code></pre>
+            <p><b>Generates:</b></p>
+          <div id="example14"></div>
         </section>
       </div>
     </div>

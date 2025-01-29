@@ -41,6 +41,7 @@ function createPill(
     spacing?: 'small' | 'medium' | 'large'
     iconsEnabled?: boolean
     text?: boolean
+    gradient?: boolean
     animation? : 'fade' | null
   } = {}){
 
@@ -52,7 +53,8 @@ function createPill(
     spacing = 'small', 
     iconsEnabled = true,
     text = true,
-    animation = null
+    gradient = false,
+    animation = ''
   } = options
 
   let element: HTMLElement | HTMLAnchorElement;
@@ -71,7 +73,7 @@ function createPill(
 
   // Basic element styling.
   if(!outline){
-    element.style.background  = item.brandPrimary
+    element.style.backgroundColor  = item.brandPrimary
   }
   if(item.color){
     element.style.color = item.color
@@ -81,9 +83,8 @@ function createPill(
   }
 
   element.style.borderColor   = item.brandPrimary
-  
-
-
+ 
+  // Icon 
   let iconElement;
   element.className = `brandpill ${item.brandName}`
 
@@ -103,6 +104,11 @@ function createPill(
     element.classList.add('outline')
   }
 
+  if(gradient){
+    console.log(gradient)
+    element.classList.add('gradient')
+  }
+
   if(['small', 'medium', 'large'].includes(spacing)) {
     element.classList.add('spaced-' + spacing)
   }
@@ -119,6 +125,8 @@ function createPill(
   // If The User Has Animations, we should add the corrosponding "Starting" class to each item here.
   // Then loop over it in the create method to init the anim for each item.
   if(animation && preDefinedAnimationsList.includes(animation.toLocaleLowerCase()) )  {
+    console.log('animation arg')
+    element.classList.add('animation')
     element.classList.add('animation-' + animation)
   }
 
@@ -139,7 +147,8 @@ export function createBrandPills(
     align?: 'left' | 'center' | 'centre' | 'right'
     iconsEnabled?: boolean,
     text?: boolean,
-    animation? : 'fade' 
+    gradient?: boolean,
+    animation? : 'fade'
   } = {}){
 
   // deconstruct from options
@@ -152,6 +161,7 @@ export function createBrandPills(
     align = 'left',
     iconsEnabled = true,
     text = true,
+    gradient = false,
     animation = null
   } = options
 
@@ -159,15 +169,14 @@ export function createBrandPills(
   let pills: Array<Node> = [];
   const container = document.createElement('div')
 
-
   // valid inputs for alignment are
   const valuesAlign = new Set(["left", "center", "centre", "right"])
 
   // map our brands for quicker lookup
   const brandsMap = new Map()
   brands.forEach((brand) => brandsMap.set(brand.brandName, brand))
-  // the results of our search on user provided input
 
+  // the results of our search on user provided input
   const matchingBrands = brandListInput ? cleanBrandInput(brandListInput).map((name) => brandsMap.get(name)): brands;
 
   // Container for our pills
@@ -181,13 +190,13 @@ export function createBrandPills(
   // If user does not provide
   if(!brandListInput || brandListInput.length === 0){
     brands.forEach(item => {
-      const pill = createPill(item, { links, rounded, outline, spacing, iconsEnabled, text })
+      const pill = createPill(item, { links, rounded, outline, spacing, iconsEnabled, text, gradient, animation })
       pills.push(pill)      
     })
   } else {
     matchingBrands.forEach((item) => {
       if (item) {
-        const pill = createPill(item, { links, rounded, outline, spacing, iconsEnabled, text })
+        const pill = createPill(item, { links, rounded, outline, spacing, iconsEnabled, text, gradient , animation })
         pills.push(pill);
       }
     })
@@ -199,6 +208,10 @@ export function createBrandPills(
     pills = shuffleArray([...pills])
   }
 
+
+  console.log('animation value is')
+  console.log(animation)
+
   pills.forEach((pill, index) => {
     container.appendChild(pill)
 
@@ -207,10 +220,7 @@ export function createBrandPills(
     window.setTimeout(() => {
       container.getElementsByClassName('brandpill')[index].classList.add('active')
     }, 420 * index)
-  });
-
-
-  // If animation is enabled, we should 
+  })
 
   // populate the dom element given to us.
   element.append(container)
