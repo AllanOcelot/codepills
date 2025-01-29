@@ -38,11 +38,14 @@ import { getBrands, createBrandPills } from '/src/main.ts'
     createBrandPills(document.getElementById('example12'), exampleBrands, { random: true })
 
 
+
+
     const animationButton1 = document.getElementById('example13Button')
-          animationButton1.addEventListener('click', () => { AppendAnimation(document.getElementById('example13'), 'fade') } );
+          animationButton1.addEventListener('click', () => { AppendAnimation(document.getElementById('example13'),'fade') } );
 
 
     // Random enabled
     function AppendAnimation(idOfElement, animationName){
+      idOfElement.innerHTML = ''
       createBrandPills(idOfElement, exampleBrands, { animation: animationName })
     }
