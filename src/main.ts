@@ -73,7 +73,7 @@ function createPill(
 
   // Basic element styling.
   if(!outline){
-    element.style.background  = item.brandPrimary
+    element.style.backgroundColor  = item.brandPrimary
   }
   if(item.color){
     element.style.color = item.color
@@ -105,6 +105,7 @@ function createPill(
   }
 
   if(gradient){
+    console.log(gradient)
     element.classList.add('gradient')
   }
 
@@ -189,13 +190,13 @@ export function createBrandPills(
   // If user does not provide
   if(!brandListInput || brandListInput.length === 0){
     brands.forEach(item => {
-      const pill = createPill(item, { links, rounded, outline, spacing, iconsEnabled, text, animation })
+      const pill = createPill(item, { links, rounded, outline, spacing, iconsEnabled, text, gradient, animation })
       pills.push(pill)      
     })
   } else {
     matchingBrands.forEach((item) => {
       if (item) {
-        const pill = createPill(item, { links, rounded, outline, spacing, iconsEnabled, text, animation })
+        const pill = createPill(item, { links, rounded, outline, spacing, iconsEnabled, text, gradient , animation })
         pills.push(pill);
       }
     })

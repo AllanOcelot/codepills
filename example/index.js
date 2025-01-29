@@ -37,6 +37,9 @@ import { getBrands, createBrandPills } from '/src/main.ts'
     // Random enabled
     createBrandPills(document.getElementById('example12'), exampleBrands, { random: true })
 
+    // Gradient enabled
+    createBrandPills(document.getElementById('example14'), exampleBrands, { gradient: true })
+
 
 
 
